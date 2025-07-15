@@ -1,11 +1,14 @@
-package Service;
+package com.realState.Arvindrealstate.Service;
 
-import Dto.InquiryRequest;
-import Model.Inquiry;
-import Repo.InquiryRepository;
+import com.realState.Arvindrealstate.Dto.InquiryRequest;
+import com.realState.Arvindrealstate.Model.Inquiry;
+import com.realState.Arvindrealstate.Repo.InquiryRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 @Data
+@Service
 public class InquiryService {
     @Autowired
     private InquiryRepository inquiryRepository;
