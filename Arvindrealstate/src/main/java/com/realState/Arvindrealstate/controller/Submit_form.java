@@ -14,8 +14,8 @@ public class Submit_form {
     private InquiryService inquiryService;
     @PostMapping
     public ResponseEntity<String> submitInquiry(@Valid @RequestBody InquiryRequest request){
-        inquiryService.saveInquiry(request);
-        return ResponseEntity.ok("Inquiry submitted successfully!");
+       Boolean saveed =  inquiryService.saveInquiry(request);
+        return ResponseEntity.ok("Inquiry submitted successfully!"+ saveed);
     }
 
 }

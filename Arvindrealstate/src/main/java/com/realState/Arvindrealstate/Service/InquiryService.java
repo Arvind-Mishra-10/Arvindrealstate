@@ -13,12 +13,16 @@ public class InquiryService {
     @Autowired
     private InquiryRepository inquiryRepository;
 
-    public void saveInquiry(InquiryRequest request) {
+    public Boolean saveInquiry(InquiryRequest request) {
         Inquiry inquiry = new Inquiry();
         inquiry.setFullName(request.getFullName());
         inquiry.setEmail(request.getEmail());
         inquiry.setCompany(request.getCompany());
         inquiry.setMessage(request.getMessage());
-        inquiryRepository.save(inquiry);
+        Inquiry Saved =  inquiryRepository.save(inquiry);
+        if(Saved!=null){
+            return true;
+        }
+        return  true;
     }
 }
